@@ -1,0 +1,4 @@
+1. class & object
+2. class has data/attributes & functions/methods
+3.python is oops
+4.advantages of oops
