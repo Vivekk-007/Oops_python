@@ -14,7 +14,9 @@ class chatbook:
                            4.press 4 to message a friend
                            5.press 5 to view profile
                            6.press 6 to logout
-                           7.press any other key to exit to exit""") 
+                           7.press any other key to exit to exit
+                           
+                              """) 
          
         if user_input == '1':
             self.signup()
@@ -76,7 +78,4 @@ class chatbook:
         else:
             print("you are not logged in")
         self.menu()
-
-app = chatbook()
-
-app.signup('vivek', 'vivek123')
+# user1 = chatbook()
