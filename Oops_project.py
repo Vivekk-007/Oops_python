@@ -17,18 +17,66 @@ class chatbook:
                            7.press any other key to exit to exit""") 
          
         if user_input == '1':
-            pass
-        elif user_input == '2':     
-            pass
+            self.signup()
+        elif user_input == '2':
+            self.login()            
         elif user_input == '3':
-            pass
+            self.write_post()
         elif user_input == '4':
-            pass
+            self.message_friend()
         elif user_input == '5':
-            pass        
+            self.view_profile()
         elif user_input == '6':
-            pass    
+            self.logout()
         else:
-            exit()            
+            exit() 
 
-app = chatbook()    
+    def signup(self):
+        email = input("enter your email id: ")  
+        password = input("enter your password: ")
+        self.username = email
+        self.password = password
+        print("signup successful")
+        self.menu() 
+
+    def login(self):
+        email = input("enter your email id: ")  
+        password = input("enter your password: ")
+        if email == self.username and password == self.password:
+            self.logged_in = True
+            print("login successful")
+        else:
+            print("invalid credentials")
+        self.menu()
+    def write_post(self):
+        if self.logged_in:
+            post = input("write your post: ")
+            print("post successful")
+        else:
+            print("please login to write a post")
+        self.menu()
+    def message_friend(self):
+        if self.logged_in:
+            friend = input("enter your friend's name: ")
+            message = input("enter your message: ")
+            print("message sent to", friend)
+        else:
+            print("please login to message a friend")
+        self.menu()
+    def view_profile(self):
+        if self.logged_in:
+            print("username:", self.username)
+        else:
+            print("please login to view profile")
+        self.menu()
+    def logout(self):
+        if self.logged_in:
+            self.logged_in = False
+            print("logout successful")
+        else:
+            print("you are not logged in")
+        self.menu()
+
+app = chatbook()
+
+app.signup('vivek', 'vivek123')
